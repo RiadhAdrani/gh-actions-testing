@@ -1,0 +1,10 @@
+name: deleted-branch
+on: [delete]
+jobs:
+  delete:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up
+        run: |
+          echo "You deleted branch named : ${{ github.event.ref }}"
