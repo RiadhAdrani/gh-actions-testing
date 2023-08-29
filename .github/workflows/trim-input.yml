@@ -1,0 +1,24 @@
+name: Trim Name
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Enter your name'
+        required: true
+      length:
+        description: 'Max length before trimming'
+        required: true
+
+jobs:
+  trim:
+    runs-on: ubuntu-latest
+    steps:
+      - id: trim
+        name: Trim name
+        uses: RiadhAdrani/gh-actions-testing/.github/actions/trim@master
+        with:
+          text: '${{ github.event.inputs.name }}'
+          max-length: ${{ github.event.inputs.length }}
+      - name: Display trimmed name
+        run: |
+          echo "${{ steps.trim.outputs.text }}"

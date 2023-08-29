@@ -12,6 +12,10 @@ inputs:
     default: 40
     type: string
 
+outputs:
+  text:
+    description: 'The trimmed text "OUT"'
+
 runs:
   using: 'composite'
   steps:
@@ -22,8 +26,11 @@ runs:
         echo "text = ${{ inputs.text }}"
         echo "max-length = ${{ inputs.max-length }}"
 
-        TEXT=${{ inputs.text }}
+        TEXT="${{ inputs.text }}"
 
-        OUT=${TEXT:0:${{ inputs.max-length }}}
+        OUT="${TEXT:0:${{ inputs.max-length }}}"
 
         echo "result = ${OUT}"
+
+        # Set the output value for 'trimmed-text'
+        echo "::set-output name=text::${OUT}"
