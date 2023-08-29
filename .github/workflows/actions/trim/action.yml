@@ -1,0 +1,26 @@
+name: 'Setup namespace'
+description: 'Check and trim namespace'
+
+inputs:
+  text:
+    description: 'The text to trim'
+    required: true
+    type: string
+  max-length:
+    description: 'Maximum length before trimming'
+    required: false
+    default: 40
+    type: string
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Trim
+      shell: bash
+      run: |
+
+        TEXT=${{ inputs.branch }}
+
+        TRIMMED=${TEXT:0:50}
+
+        echo "${TEXT}"
