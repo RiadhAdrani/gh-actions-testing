@@ -19,8 +19,10 @@ runs:
       shell: bash
       run: |
 
+        echo "${{ inputs.branch }}"
+
         TEXT=${{ inputs.branch }}
 
-        TRIMMED=${TEXT:0:50}
+        TRIMMED=${TEXT:0:${{ inputs.max-length }}}
 
         echo "${TEXT}"
