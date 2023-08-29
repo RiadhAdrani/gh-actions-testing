@@ -1,0 +1,12 @@
+name: Say Hi
+on: [push]
+jobs:
+  trim:
+    runs-on: ubuntu-latest
+    steps:
+      - id: trim
+        name: Trim string
+        uses: RiadhAdrani/gh-actions-testing/.github/actions/trim@trim-action
+        with:
+          text: HelloWorld
+          max-length: 5
