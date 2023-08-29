@@ -33,4 +33,8 @@ runs:
         echo "result = ${OUT}"
 
         # Set the output value for 'trimmed-text'
-        echo "::set-output name=text::${OUT}"
+        # echo "::set-output name=text::${OUT}"
+
+        echo "text=${OUT}" >> $GITHUB_OUTPUT
+
+        echo $GITHUB_OUTPUT
