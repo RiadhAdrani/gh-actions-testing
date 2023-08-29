@@ -6,7 +6,7 @@ jobs:
     steps:
       - id: trim
         name: Trim string
-        uses: RiadhAdrani/gh-actions-testing/.github/actions/trim@trim-action
+        uses: RiadhAdrani/gh-actions-testing/.github/actions/trim@master
         with:
           text: HelloWorld
           max-length: 5
