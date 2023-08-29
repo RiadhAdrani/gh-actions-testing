@@ -24,6 +24,6 @@ runs:
 
         TEXT=${{ inputs.text }}
 
-        TRIMMED=${TEXT:0:${{ inputs.max-length }}}
+        OUT=${TEXT:0:${{ inputs.max-length }}}
 
-        echo "result = ${TEXT}"
+        echo "result = ${OUT}"
