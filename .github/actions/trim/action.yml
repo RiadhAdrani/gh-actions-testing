@@ -19,10 +19,11 @@ runs:
       shell: bash
       run: |
 
-        echo "${{ inputs.branch }}"
+        echo "text = ${{ inputs.text }}"
+        echo "max-length = ${{ inputs.max-length }}"
 
-        TEXT=${{ inputs.branch }}
+        TEXT=${{ inputs.text }}
 
         TRIMMED=${TEXT:0:${{ inputs.max-length }}}
 
-        echo "${TEXT}"
+        echo "result = ${TEXT}"
